@@ -49,14 +49,14 @@ public class MainClass {
 		 *
 		 * Register, Delete Select.. 등의 서비스들은 모두 assembler에 의존하고 있다.
 		 *
-		 * 만약 각각의 서비스를 사용할 때 마다 Dao 객체를 생성해준다면 학생 정보 서비스를 이용할 수 있기때문에
-		 *
+		 * 만약 각각의 서비스를 사용할 때 마다 Dao 객체를 생성해준다면 학생 정보 서비스를 이용할 수 없기때문에
 		 * assembler 객체를 한번 만들고 이 객체를 모든 서비스에 주입해준다.
+		 *
 		 * */
 		StudentAssembler assembler = new StudentAssembler();
 
 		/**
-		 * 위에 입력된 데이터를 assembler에 등록한다.*/
+		 * 현재 생성된 assembler 객체에는 아무런 정보가 없기 때문에 위의 데이터 정보를 넣어준다!! */
 		StudentRegisterService registerService = assembler.getRegisterService();
 		for (int j = 0; j < sNums.length; j++) {
 			Student student = new Student(sNums[j], sIds[j], sPws[j], sNames[j], 
@@ -65,13 +65,18 @@ public class MainClass {
 		}
 
 		/**
-		 * assembler (DB) 를 가지고 modifyService 객체 생성 후 학생 정보를 수정한다.*/
+		 * assembler (DB) 를 가지고 modifyService 객체 생성 후 학생 정보를 수정한다.
+		 *
+		 * modifyService 변수에 assembler에 있는 StudentModifyServicer 인스턴스 대입
+		 *
+		 * */
 		StudentModifyService modifyService = assembler.getModifyService();
 		modifyService.modify(new Student("H39lesvj7544vf89", "deer", "00000", "melissa", 
 				26, "W", "Vocal Music"));
 
 		/**
-		 * assembler (DB) 를 가지고 modifyService 객체 생성 후 학생정보를 가져온다.*/
+		 * assembler (DB) 를 가지고 modifyService 객체 생성 후 학생정보를 가져온다.
+		 * */
 		StudentSelectService selectService = assembler.getSelectService();
 		Student modifiedStudent = selectService.select("H39lesvj7544vf89");
 		System.out.print("sNum:" + modifiedStudent.getsNum() + "\t");
@@ -83,7 +88,8 @@ public class MainClass {
 		System.out.print("|sMajor:" + modifiedStudent.getsMajor() + "\n\n");
 
 		/**
-		 * assembler (DB) 를 가지고 modifyService 객체 생성 후 모든 학생정보를 가져 온다.*/
+		 * assembler (DB) 를 가지고 modifyService 객체 생성 후 모든 학생정보를 가져 온다.
+		 * */
 		StudentAllSelectService allSelectService = assembler.getAllSelectService();
 		Map<String, Student> allStudent = allSelectService.allSelect();
 		Set<String> keys = allStudent.keySet();

@@ -46,17 +46,18 @@ public class MainClassUseXML {
 		 * 컨테이너를 생성후 getBean을 이용해서 각각의 Bean들을 사용한다.
 		 *
 		 * */
-		
+
 		/**
-		 * Bean이 생성되어 있기때문에 assembler를 만들지 않는다.*/
+		 * Bean이 생성되어 있기때문에 (스프링 컨테이너를 이용하기 때문에) assembler를 직접 만들지 않는다.
+		 * 컨테이너를 생성하면서 각 명시 되어있던 객체들이 생성되면서 의존성 주입이 일어난다.*/
 		//		StudentAssembler assembler = new StudentAssembler();
 		GenericXmlApplicationContext ctx = 
-				new GenericXmlApplicationContext("classpath:applicationContext.xml");
+				new GenericXmlApplicationContext("classpath:applicationContext.xml"); // 스프링 컨테이너 생성
 
 		/**
 		 * 이제 생성된 Bean들을 getBean을 이용해서 사용한다.*/
 		EMSInformationService informationService = ctx.getBean("informationService", EMSInformationService.class);
-		informationService.outputEMSInformation();
+		informationService.outputEMSInformation(); // 이거 소스코드 만든 날짜 및 정보 출력임 신경안써두댐
 		
 //		StudentRegisterService registerService = assembler.getRegisterService();
 		StudentRegisterService registerService = ctx.getBean("registerService", StudentRegisterService.class);
