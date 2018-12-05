@@ -38,10 +38,23 @@ public class MainClassUseXML {
 				"French Language and Literature", "Philosophy", "History", 
 				"Law", "Statistics", "Computer", "Economics", "Public Administration"};
 
-//		StudentAssembler assembler = new StudentAssembler();
+		/**
+		 * ManClass는 assembler 라는 객체를 직접 만들어서 사용했지만
+		 *
+		 * Spring은 Container(applicationContext.xml)에서 각각의 Bean을 생성해뒀기 때문에
+		 *
+		 * 컨테이너를 생성후 getBean을 이용해서 각각의 Bean들을 사용한다.
+		 *
+		 * */
+		
+		/**
+		 * Bean이 생성되어 있기때문에 assembler를 만들지 않는다.*/
+		//		StudentAssembler assembler = new StudentAssembler();
 		GenericXmlApplicationContext ctx = 
 				new GenericXmlApplicationContext("classpath:applicationContext.xml");
-		
+
+		/**
+		 * 이제 생성된 Bean들을 getBean을 이용해서 사용한다.*/
 		EMSInformationService informationService = ctx.getBean("informationService", EMSInformationService.class);
 		informationService.outputEMSInformation();
 		

@@ -6,7 +6,7 @@
  		http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<!-- StudentAssembler 와 같은 코드이다. Spring화 시킨 것 -->
-	<!-- Dao Bean 생성 (여기서 Dao는 DB라고 보면됨)-->
+	<!-- Dao Bean 생성 -->
 	<bean id="studentDao" class="ems.member.dao.StudentDao" ></bean>
 	
 	<!-- Dao Bean을 각 서비스 클래스에 생성자(constructor-arg)로 넣어주고있음 (의존성 주입)-->
@@ -29,8 +29,7 @@
 	<bean id="allSelectService" class="ems.member.service.StudentAllSelectService">
 		<constructor-arg ref="studentDao" ></constructor-arg>
 	</bean>
-
-	<!-- 다른 방법.. -->
+	
 	<bean id="dataBaseConnectionInfoDev" class="ems.member.DataBaseConnectionInfo">
 		<property name="jdbcUrl" value="jdbc:oracle:thin:@localhost:1521:xe" />
 		<property name="userId" value="scott" />

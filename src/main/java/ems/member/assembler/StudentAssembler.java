@@ -17,7 +17,14 @@ public class StudentAssembler {
 	private StudentAllSelectService allSelectService;
 	
 	public StudentAssembler() {
+		/**
+		 * studentDao 인스턴스를 만들어서 의존성 주입을 해줬기 때문에
+		 * 각각의 다른 서비스에서도 한번 등록했던 데이터들을 공통으로 사용할 수 있다.
+		 */
 		studentDao = new StudentDao();
+		/**
+		 * 여기서 의존성 주입을 하고 있다. DI(studentDao)
+		 * */
 		registerService = new StudentRegisterService(studentDao);
 		modifyService = new StudentModifyService(studentDao);
 		deleteService = new StudentDeleteService(studentDao);
