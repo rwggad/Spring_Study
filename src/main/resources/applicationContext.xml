@@ -2,5 +2,9 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-
+    <!--
+     new 라는 키워드를 통해서 객체를 생성할 필요가 없이 자동으로 생성된다.
+     메모리에 로드가 되었다. ( 스프링 컨테이너에 담겨있다. )
+    -->
+    <bean id="tWalk" class="TranspotationWalk"/>
 </beans>
