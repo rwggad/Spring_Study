@@ -6,10 +6,8 @@ import java.util.Map;
 import com.word.WordSet;
 
 public class WordDao {
-	/***/
 
-	private Map<String, WordSet> wordDB = 
-			new HashMap<String, WordSet>();
+	private Map<String, WordSet> wordDB = new HashMap<String, WordSet>();
 
 	public void insert(WordSet wordSet) {
 		wordDB.put(wordSet.getWordKey(), wordSet);

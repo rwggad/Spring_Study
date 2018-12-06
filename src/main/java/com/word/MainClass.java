@@ -22,17 +22,23 @@ public class MainClass {
 				"자바는 썬 마이크로시스템즈의 제임스 고슬링(James Gosling)과 다른 연구원들이 개발한 객체 지향적 프로그래밍 언어이다.", 
 				"JSP는 HTML내에 자바 코드를 삽입하여 웹 서버에서 동적으로 웹 페이지를 생성하여 웹 브라우저에 돌려주는 언어이다.", 
 				"스프링 프레임워크는 자바 플랫폼을 위한 오픈소스 애플리케이션 프레임워크로서 간단히 스프링이라고도 불린다."};
-		
+
+		/**
+		 * 스프링 컨테이너 생성*/
 		GenericXmlApplicationContext ctx = 
 				new GenericXmlApplicationContext("classpath:appCtx.xml");
-		
+
+		/**
+		 * 단어를 등록해줌 WordSet으로 set을 만들고 저장해줌*/
 		WordRegisterService registerService = 
 				ctx.getBean("registerService", WordRegisterService.class);
 		for (int i = 0; i < values.length; i++) {
 			WordSet wordSet = new WordSet(keyWords[i], values[i]);
 			registerService.register(wordSet);
 		}
-		
+
+		/**
+		 * 단어를 찾기 위해서 searchService Bean을 받아옴*/
 		WordSearchService searchService = 
 				ctx.getBean("searchService", WordSearchService.class);
 		
