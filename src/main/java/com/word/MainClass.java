@@ -5,6 +5,10 @@ import org.springframework.context.support.GenericXmlApplicationContext;
 import com.word.service.WordRegisterService;
 import com.word.service.WordSearchService;
 
+/**
+ * @Autowired,  @Resource, @Inject 에 관한 예제
+ *
+ * */
 public class MainClass {
 
 	public static void main(String[] args) {
