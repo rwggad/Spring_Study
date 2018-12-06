@@ -1,12 +1,12 @@
 package com.word;
 
 import com.word.service.WordRegisterServiceUseAutowired;
-import com.word.service.WordRegisterServiceUseResource;
+import com.word.service.WordRegisterServiceUseInject;
 import com.word.service.WordSearchServiceUseAutowired;
-import com.word.service.WordSearchServiceUseResource;
+import com.word.service.WordSearchServiceUseInject;
 import org.springframework.context.support.GenericXmlApplicationContext;
 
-public class MainClassUseResource {
+public class MainClassUseInject {
 
 	public static void main(String[] args) {
 
@@ -25,14 +25,14 @@ public class MainClassUseResource {
 				"스프링 프레임워크는 자바 플랫폼을 위한 오픈소스 애플리케이션 프레임워크로서 간단히 스프링이라고도 불린다."};
 
 		/**
-		 * 스프링 컨테이너 생성 - @Resource 사용 컨테이너*/
+		 * 스프링 컨테이너 생성 - @Inject 사용 컨테이너*/
 		GenericXmlApplicationContext ctx = 
-				new GenericXmlApplicationContext("classpath:appCtxUseResource.xml");
+				new GenericXmlApplicationContext("classpath:appCtxUseInject.xml");
 
 		/**
 		 * 단어를 등록해줌 WordSet으로 set을 만들고 저장해줌*/
-		WordRegisterServiceUseResource registerService =
-				ctx.getBean("registerServiceUseResource", WordRegisterServiceUseResource.class);
+		WordRegisterServiceUseInject registerService =
+				ctx.getBean("registerServiceUseInject", WordRegisterServiceUseInject.class);
 		for (int i = 0; i < values.length; i++) {
 			WordSet wordSet = new WordSet(keyWords[i], values[i]);
 			registerService.register(wordSet);
@@ -40,8 +40,8 @@ public class MainClassUseResource {
 
 		/**
 		 * 단어를 찾기 위해서 searchService Bean을 받아옴*/
-		WordSearchServiceUseResource searchService =
-				ctx.getBean("searchServiceUseResource", WordSearchServiceUseResource.class);
+		WordSearchServiceUseInject searchService =
+				ctx.getBean("searchServiceUseInject", WordSearchServiceUseInject.class);
 		
 		System.out.println("\n\n------------------------------------");
 		for (int i = 0; i < keyWords.length; i++) {

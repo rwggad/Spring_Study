@@ -18,8 +18,15 @@
     -->
 	<context:annotation-config />
 
-
-	<bean id="wordDao" class="com.word.dao.WordDao"/>
+	<!--
+	 같은 타입의 Bean(객체)가 여러개 존재한다면 자동으로 주입해줘야하는 객체를 명확하게
+	 알수 없기 때문에 예외 발생이 일어난다. 그래서 Qualifier 를 이용해서 명확하게 명시해준다.
+	-->
+	<bean id="wordDao1" class="com.word.dao.WordDao">
+		<qualifier value="usedDAO"/>
+	</bean>
+	<bean id="wordDao2" class="com.word.dao.WordDao"/>
+	<bean id="wordDao3" class="com.word.dao.WordDao"/>
 
 	<bean id="registerServiceUseAutowired" class="com.word.service.WordRegisterServiceUseAutowired">
 		<!-- <constructor-arg ref="wordDao"/> -->

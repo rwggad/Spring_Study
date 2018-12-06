@@ -1,21 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:context="http://www.springframework.org/schema/context"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans 
- 		http://www.springframework.org/schema/beans/spring-beans.xsd 
- 		http://www.springframework.org/schema/context 
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+ 		http://www.springframework.org/schema/beans/spring-beans.xsd
+ 		http://www.springframework.org/schema/context
  		http://www.springframework.org/schema/context/spring-context.xsd">
 
+	<!--
+     Dao 와 서비스 Bean 생성
+     @Autowired와 비슷하다.
+    -->
 	<context:annotation-config />
 
-	<!-- <bean id="wordDao" class="com.word.dao.WordDao" /> -->
-	<bean id="wordDao1" class="com.word.dao.WordDao" />
-	<bean id="wordDao2" class="com.word.dao.WordDao" />
-	
-	<bean id="registerService" class="com.word.service.WordRegisterServiceUseInject" />
-	
-	<bean id="searchService" class="com.word.service.WordSearchServiceUseInject" />
-	
+	<!--
+	 같은 타입의 Bean(객체)가 여러개 존재한다면 자동으로 주입해줘야하는 객체를 명확하게
+	 알수 없기 때문에 예외 발생이 일어난다.
+	 @Autowired와는 다르게 qualifier를 사용하지 않고 @Named anootation을 통해서 명시해준다.
+	-->
+	<bean id="wordDao1" class="com.word.dao.WordDao"/>
+	<bean id="wordDao2" class="com.word.dao.WordDao"/>
+	<bean id="wordDao3" class="com.word.dao.WordDao"/>
+
+	<bean id="registerServiceUseInject" class="com.word.service.WordRegisterServiceUseInject">
+		<!-- <constructor-arg ref="wordDao"/> -->
+	</bean>
+
+	<bean id="searchServiceUseInject" class="com.word.service.WordSearchServiceUseInject">
+		<!-- <constructor-arg ref="wordDao"/> -->
+	</bean>
 </beans>
