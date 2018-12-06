@@ -122,6 +122,8 @@ public class EMSInformationService {
 		this.eDay = eDay;
 	}
 
+	/**
+	 * List타입을 통한 의존성 주입*/
 	public List<String> getDevelopers() {
 		return developers;
 	}
@@ -130,6 +132,8 @@ public class EMSInformationService {
 		this.developers = developers;
 	}
 
+	/**
+	 * Map 타입을 통한 의존성 주입*/
 	public Map<String, String> getAdministrators() {
 		return administrators;
 	}
