@@ -1,11 +1,13 @@
 package com.brms.book.service;
 
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.brms.book.Book;
 import com.brms.book.dao.BookDao;
 
-public class BookRegisterService {
+public class BookRegisterService implements InitializingBean, DisposableBean {
 
 	/**
 	 * 책을 등록하는 서비스 */
@@ -17,12 +19,22 @@ public class BookRegisterService {
 	public void register(Book book) {
 		bookDao.insert(book);
 	}
-	
-	public void initMethod() {
-		System.out.println("BookRegisterService 빈(Bean)객체 생성 단계");
+
+
+	/**
+	 * InitializingBean 에서 오버라이딩
+	 * Bean이 생성되는 시점 */
+	@Override
+	public void afterPropertiesSet() throws Exception {
+
 	}
-	
-	public void destroyMethod() {
-		System.out.println("BookRegisterService 빈(Bean)객체 소멸 단계");
+
+
+	/**
+	 * DisposableBean 에서 오버라이딩
+	 * Bean이 삭제되는 시점 */
+	@Override
+	public void destroy() throws Exception {
+		System.out.println("BookRegisterService Bean 소멸");
 	}
 }

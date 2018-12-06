@@ -17,5 +17,14 @@ public class MemberSearchService {
 	public Member searchMember(String mId) {
 		return memberDao.select(mId);
 	}
+	// Bean이 생성될 때 호출
+	public void initMethod(){
+		System.out.println("MemberSearchService Bean 생성");
+	}
+
+	// Bean이 소멸될 때 호출
+	public void destroyMethod(){
+		System.out.println("MemberSearchService Bean 소멸");
+	}
 	
 }
