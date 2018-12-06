@@ -56,7 +56,10 @@ public class MainClass {
 		StudentAssembler assembler = new StudentAssembler();
 
 		/**
-		 * 현재 생성된 assembler 객체에는 아무런 정보가 없기 때문에 위의 데이터 정보를 넣어준다!! */
+		 * 현재 생성된 assembler 객체에는 아무런 정보가 없기 때문에 위의 데이터 정보를 넣어준다!!
+		 *
+		 * registerService 변수에 assembler에 있는 StudentRegisterService 인스턴스 대입..
+		 * */
 		StudentRegisterService registerService = assembler.getRegisterService();
 		for (int j = 0; j < sNums.length; j++) {
 			Student student = new Student(sNums[j], sIds[j], sPws[j], sNames[j], 
