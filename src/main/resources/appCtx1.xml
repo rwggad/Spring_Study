@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<!-- applicationContext.xml 파일 분리 1 - (가독성을 위해서) -->
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
  		http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+	<!-- Dao 와 Service Bean만 만듬 -->
 	<bean id="studentDao" class="ems.member.dao.StudentDao" ></bean>
-	
 	
 	<bean id="registerService" class="ems.member.service.StudentRegisterService">
 		<constructor-arg ref="studentDao" ></constructor-arg>

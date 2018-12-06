@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+
+<!-- applicationContext.xml 파일 분리 3 - (가독성을 위해서) -->
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
  		http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+	<!-- 개발자 정보에 대한 Bean 정보만 정의 -->
 	<bean id="informationService" class="ems.member.service.EMSInformationService">
 		<property name="info">
 			<value>Education Management System program was developed in 2015.</value>

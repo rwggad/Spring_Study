@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<!-- applicationContext.xml 파일 분리 2 -(가독성을 위해서) -->
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
  		http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+	<!-- DateBase와 관련된 Bean만 정의 -->
 	<bean id="dataBaseConnectionInfoDev" class="ems.member.DataBaseConnectionInfo">
 		<property name="jdbcUrl" value="jdbc:oracle:thin:@localhost:1521:xe" />
 		<property name="userId" value="scott" />

@@ -38,6 +38,11 @@ public class MainClassUseXMLs {
 				"French Language and Literature", "Philosophy", "History", 
 				"Law", "Statistics", "Computer", "Economics", "Public Administration"};
 
+        /**
+         * applicationContext를 Ctx1, Ctx2, Ctx3로 분리 했을 때..
+         *
+         * 분리 했기 때문에 String[] 으로 3개 파일을 정의 하고 문자열 배열을 Ceneric에 넣어주면 똑같이 사용할 수 있다.
+         */
 //		StudentAssembler assembler = new StudentAssembler();
 		String[] appCtxs = {"classpath:appCtx1.xml", "classpath:appCtx2.xml", "classpath:appCtx3.xml"};
 		GenericXmlApplicationContext ctx = 

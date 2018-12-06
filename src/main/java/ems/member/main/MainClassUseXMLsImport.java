@@ -39,6 +39,8 @@ public class MainClassUseXMLsImport {
 				"Law", "Statistics", "Computer", "Economics", "Public Administration"};
 
 //		StudentAssembler assembler = new StudentAssembler();
+		/**
+		 * appCtxImport.xml에 3가지 파일에 대한 정보가 들어가 있음*/
 		GenericXmlApplicationContext ctx = 
 				new GenericXmlApplicationContext("classpath:appCtxImport.xml");
 		

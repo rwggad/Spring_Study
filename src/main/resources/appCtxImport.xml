@@ -5,12 +5,20 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
  		http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+	<!--
+	 Dao와 Service 에대한 Bean만 선언하고
+	 개발자 정보, DataBase에 관한 Bean들에 대한 정보는 import해서 한곳에 정의 시킨다.
+
+	 그러면 MainClassUse 클래스에서 3개로 분활했을때 문자열로 Generic 을 선언한거와 달리 그냥 이 xml 파일만
+	 넣으면 기능을 똑같이 사용할 수 있다.
+	-->
+
 	<import resource="classpath:appCtx2.xml"/>
 	<import resource="classpath:appCtx3.xml"/>
 
+
 	<bean id="studentDao" class="ems.member.dao.StudentDao" ></bean>
-	
-	
+
 	<bean id="registerService" class="ems.member.service.StudentRegisterService">
 		<constructor-arg ref="studentDao" ></constructor-arg>
 	</bean>
