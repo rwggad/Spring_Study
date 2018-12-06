@@ -11,7 +11,14 @@ import ems.member.service.StudentAllSelectService;
 import ems.member.service.StudentModifyService;
 import ems.member.service.StudentRegisterService;
 import ems.member.service.StudentSelectService;
-
+/**
+ * 스르링 컨테이너를 이용해서 프로그래밍 하는 예제
+ *
+ * 1. 스프링 컨테이너 한곳에 다적기(applicationContext)
+ * 2. 스프링 컨테이너 내용 기능에 따라 분활 (appCtx1 ~ appCtx3)
+ * 3. 스프링 컨테이너에서 import (appCtxImport)
+ *
+ * */
 public class MainClass {
 
 	public static void main(String[] args) {
