@@ -2,6 +2,10 @@ package scope.ex;
 
 import org.springframework.context.support.GenericXmlApplicationContext;
 
+/**
+ * singleton(싱글톤), prototype(프로토타입) 에 대한 예제
+ *
+ * */
 public class MainClass {
 
 	public static void main(String[] args) {
