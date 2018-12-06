@@ -3,6 +3,8 @@ import org.springframework.context.support.GenericXmlApplicationContext;
 import sun.net.www.content.text.Generic;
 
 public class main {
+    /**
+     * 일반적인 프로그래밍과 스프링 컨테이너 사용하는 프로그래밍과 간단한 비교 예제*/
     public static void main(String[] argc){
 
         /**
