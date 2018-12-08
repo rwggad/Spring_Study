@@ -14,6 +14,11 @@ import ems.member.service.EMSInformationService;
 @Configuration
 public class MemberConfig3 {
 
+	/**
+	 * congif2 Bean을 가져오기 위해
+	 *
+	 * 컨테이너를 만들때 1,2,3을 생성하기 때문에 1,2,3은 같은 컨테이너이다.
+	 * */
 	@Autowired
 	DataBaseConnectionInfo dataBaseConnectionInfoDev;
 	
