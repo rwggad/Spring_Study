@@ -18,6 +18,11 @@ import ems.member.service.StudentSelectService;
 
 public class MainClassUseConfigrations {
 
+	/**
+	 * xml 파일이 아닌 java 파일로 작성한 스프링컨테이너로 작성
+	 *
+	 * 한개의 스프링컨테이너가 아닌 여러개의 스프링컨테이너를 사용한다.
+	 * */
 	public static void main(String[] args) {
 		
 		String[] sNums = {"H39r8djakndfae32", "H39asdfaelu42o23", "H39iiemamca8w9h4", 
@@ -41,7 +46,12 @@ public class MainClassUseConfigrations {
 				"Law", "Statistics", "Computer", "Economics", "Public Administration"};
 
 //		StudentAssembler assembler = new StudentAssembler();
-		AnnotationConfigApplicationContext ctx = 
+		/**
+		 * GenericXmlApplicationContext -> AnnotationConfigApplicationContext으로 이용해서 java 스프링 컨테이너를 이용한다.
+		 *
+		 * 여러개의 스프링컨테이너를 사용하려면 , 를 이용해서 AnnotationConfigApplicationContext를 만들어준다.
+		 * */
+		AnnotationConfigApplicationContext ctx =
 				new AnnotationConfigApplicationContext(MemberConfig1.class, MemberConfig2.class, MemberConfig3.class);
 		
 		EMSInformationService informationService = ctx.getBean("informationService", EMSInformationService.class);

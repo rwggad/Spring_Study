@@ -17,7 +17,12 @@ import ems.member.service.StudentSelectService;
 public class MainClassUseConfigrationsImport {
 
 	public static void main(String[] args) {
-		
+
+		/**
+		 * xml 파일이 아닌 java 파일로 작성한 스프링컨테이너로 작성
+		 *
+		 * import된 컨테이너 class를 사용한다. 한개를 사용할때 처럼 정의하면된다.
+		 * */
 		String[] sNums = {"H39r8djakndfae32", "H39asdfaelu42o23", "H39iiemamca8w9h4", 
 						  "H39lkmn754fghia7", "H39plo865cuy8k92", "H39mnbviiaed89q1", 
 						  "H399omjjyv56t3d5", "H39lczaqwg644gj8", "H39ymbcsh74thgh2", 
