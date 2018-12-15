@@ -1,5 +1,6 @@
 # Spring_Study
-
+ - Spring에 대한 기본적인 용어 정리, 이해를 위한 실습을 목표로 두고 있다.
+ 
  - Branchs
    - Wiki - Spring에 대한 기본적인 용어 정리
 
