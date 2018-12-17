@@ -4,7 +4,7 @@
  - Branchs
    - Wiki - Spring에 대한 기본적인 용어 정리
 
-   - example1 - 일반적인 프로그래밍과 , Spring 컨테이너를 사용하는 프로그래밍의 비교 
+   - example1 - 일반적인 프로그래밍과 , Spring 컨테이너를 사용하는 프로그래밍의 비교 , 의존성에 대한 
 
    - example2 - DI(의존성 주입)에 대한 프로그래밍 
 
